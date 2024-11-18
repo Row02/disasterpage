@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.logo{
+    width: 3em;
+    height: 3em;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 3em;
+    height: 3em;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.navItem{
+    color: black;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.navItem:hover{
+    color: grey;
+}
+
+.reportButton{
+    cursor: pointer;
+    border: 1px solid black;
+    padding: .5em 2em;
+    border-radius: 2rem;
+}

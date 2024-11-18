@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    box-sizing: border-box;
+    min-height: 100vh;
+    max-width: 1400px; /* Maximum width of the content */
+    width: 100%;
+    margin: 0 auto; 
+    border: 1px solid black;
+    z-index: 1;
+}
+
+.firstContent{
+    display: flex;
+    width: 100%;
+    height: 35em;
+    background: linear-gradient(rgba(0, 21, 116, 0.5), rgba(0, 21, 116, 0.5)), url("../assets/contentBackground.jpeg");
+    background-size: cover;
+    background-position: center;
+    padding: 4em 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    color: white;
+}
+
+.firstContent h1{
+    font-size: 3rem;
+}
+
+.firstContent p{
+    font-size: 1.1rem;
+}
+
+.secondContent{
+    width: 100%;
+    height: 40em;
+    display: flex;
+    align-items: center;
+    padding: 4rem;
+    background-image: url(../assets/background2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cardContainer{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 2rem;
+    width: 35em;
+    padding: 3rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    gap: 2rem;
+}
+
+.learnMore{
+    background-color: #4b8cf7;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.viewResource{
+    background-color: white;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    border-radius: 5px;
+}
+
+.viewResource:hover{
+    background-color: rgba(75, 140, 247, .5);
+}
