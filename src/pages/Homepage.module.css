@@ -80,3 +80,120 @@
 .viewResource:hover{
     background-color: rgba(75, 140, 247, .5);
 }
+
+.thirdContent{
+    height: 42em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftCard{
+    width: 50%;
+    height: 100%;
+    background-image: url("../assets/map.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.rightCard{
+    width: 50%;
+    height: 100%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.subHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.discoverMore{
+    background-color: #4b8cf7;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.learnMore, .discoverMore{
+    cursor: pointer;
+
+}
+
+.fourthContent{
+    width: 100%;
+    height: 39em;
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.imageWrap{
+    border: 1px solid black;
+    width: 12em;
+    height: 13em;
+}
+
+.fifthContent{
+    width: 100%;
+    height: 39em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+.cardContent{
+    width: 100%;
+    height: auto;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    gap: .5rem;
+    background-image: linear-gradient(rgba(46, 72, 204, 0.5), rgba(46, 72, 204, 0.5)), url("../assets/building.JPG");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    filter: blur(.6px);
+}
+
+.sixthContent{
+    width: 100%;
+    height: 39em;
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftCardSix{
+    border: 1px solid black;
+    width: 40%;
+    height: 20em;
+}
+
+.sixthButtons{
+    display: flex;
+    flex-direction: row;
+}
