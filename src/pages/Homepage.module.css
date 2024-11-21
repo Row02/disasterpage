@@ -8,7 +8,6 @@
     max-width: 1400px; /* Maximum width of the content */
     width: 100%;
     margin: 0 auto; 
-    border: 1px solid black;
     z-index: 1;
 }
 
@@ -172,6 +171,7 @@
     border-radius: 1rem;
     gap: .5rem;
     background-image: linear-gradient(rgba(46, 72, 204, 0.5), rgba(46, 72, 204, 0.5)), url("../assets/building.JPG");
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-position: center;
     background-size: cover;
     color: white;
@@ -182,18 +182,161 @@
     width: 100%;
     height: 39em;
     display: flex;
-    border: 1px solid black;
     align-items: center;
-    justify-content: center;
+    padding: 3rem;
+    gap: 5rem;
 }
 
 .leftCardSix{
-    border: 1px solid black;
-    width: 40%;
-    height: 20em;
+    width: 45%;
+    height: auto;
 }
 
 .sixthButtons{
     display: flex;
     flex-direction: row;
+    gap: 1rem;
 }
+
+.preparednessButton{
+    background-color: #3b82f6;
+    color: white;
+    padding: .8rem 1.3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.preparednessButton:hover{
+    background-color: #2e6df6;
+}
+
+.exploreMDRRMOButton{
+    border: 1px solid #e5e5e5;
+    color: black;
+    padding: .8rem 1.3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.exploreMDRRMOButton:hover{
+    background-color: #e5e5e5;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.icons i{
+    font-size: 1.2rem;
+    background-color: #e8f5ff;
+    color:#1f2937 ;
+    padding: 1rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.rightCardSix{
+    width: 38%;
+    height: 23em;
+    background-image: url("../assets/photo.jfif");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+}
+
+.seventhContent{
+    width: 100%;
+    height: 39em;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboveContent{
+    width: 100%;
+    height: 30em;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+.aboveLeft{
+    width: 50%;
+    height: 100%;
+}
+
+.aboveRight{
+    background-image: url("../assets/phone.jpeg");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    border-radius: 1rem;
+    height: 100%;
+}
+
+.belowContent{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 10rem;
+    padding: 3rem;
+}
+
+.sections{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.secTitle{
+    color: #2e6df6;     
+    font-weight: bold;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: #05206e;
+    padding: 6rem 2rem;
+}
+
+.navLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    gap: 3rem;
+    padding-bottom: 4rem;
+}
+
+.aboveFooter{
+    border-bottom: 1px solid #1a347b;
+}
+
+.belowFooter{
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+}
+
+.iconLinks{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.iconLinks i{
+    cursor: pointer;
+}
+
