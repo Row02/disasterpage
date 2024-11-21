@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    box-sizing: border-box;
+    min-height: 100vh;
+    max-width: 1400px; 
+    width: 100%;
+    margin: 0 auto; 
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.firstContainer{
+    width: 100%;
+    height: 25em;
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.firstCard{
+    width: 55%;
+    height: 100%;
+}
+
+.secondContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid black;
+    background-color: #e8f5ff;
+    align-items: center;
+    padding: 5rem 1.5rem;
+    gap: 3rem;
+}
+
+.aboveContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #475569;
+    gap: 1rem;
+}
+
+.belowContent{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cardInfo{
+    display: flex;
+    width: 18em;
+    height: 10em;
+    align-items: flex-end;
+    padding: 1rem;
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.thirdContent{
+    width: 100%;
+    height: 39em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 4rem;
+}
+
+.cardContent{
+    width: 100%;
+    height: auto;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    gap: .5rem;
+    background-image: linear-gradient(rgba(46, 72, 204, 0.5), rgba(46, 72, 204, 0.5)), url("../assets/building.JPG");
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    filter: blur(.6px);
+}
+
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: #05206e;
+    padding: 6rem 2rem;
+}
+
+.navLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    gap: 3rem;
+    padding-bottom: 4rem;
+}
+
+.aboveFooter{
+    border-bottom: 1px solid #1a347b;
+}
+
+.belowFooter{
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+}
+
+.iconLinks{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.iconLinks i{
+    cursor: pointer;
+}
