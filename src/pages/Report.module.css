@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    box-sizing: border-box;
+    min-height: 100vh;
+    max-width: 1400px; 
+    width: 100%;
+    margin: 0 auto; 
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.formContainer {
+    margin: 50px auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.formTitle {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #1e293b;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.reportForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup label {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
+}
+
+.inputGroup select {
+    appearance: none;
+    background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%234B5563'%20d='M2%200L0%202h4z'%3E%3C/path%3E%3C/svg%3E") no-repeat right 10px center;
+    background-size: 10px 10px;
+    cursor: pointer;
+}
+
+.submitButton {
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #2563eb;
+}
+
+.inputGroup input[type="datetime-local"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.inputGroup input[type="datetime-local"]:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
+}
+
+.helperText {
+    font-size: 0.9rem;
+    color: #6b7280; /* Neutral gray for guidance text */
+    margin-top: 4px;
+}
+
+.inputGroup input[type="datetime-local"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background-color: #f9fafb; /* Matches other inputs */
+    color: #111827; /* Text color for visibility */
+}
+
+.inputGroup input[type="datetime-local"]::placeholder {
+    color: #9ca3af; /* Placeholder color */
+}
+
+.inputGroup input[type="datetime-local"]:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
+}

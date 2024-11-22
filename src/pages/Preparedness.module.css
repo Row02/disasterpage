@@ -56,8 +56,9 @@
 .cardInfo{
     display: flex;
     width: 18em;
-    height: 10em;
-    align-items: flex-end;
+    height: auto;
+    align-items: flex-start;
+    flex-direction: column;
     padding: 1rem;
     border: 1px solid grey;
     background-color: white;
@@ -127,4 +128,17 @@
 
 .iconLinks i{
     cursor: pointer;
+}
+
+.cardVideo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.posters{
+    margin-top: 1rem;
+    height: 22em;
+    width: auto;
+    object-fit: cover;
 }

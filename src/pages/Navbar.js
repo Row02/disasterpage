@@ -12,9 +12,9 @@ export default function Navbar(){
             <div className={styles.navBar}>
                 <div className={styles.navItem} onClick={() => navigate('/')}>Home Page</div>
                 <div className={styles.navItem} onClick={() => navigate('/preparedness')}>Preparedness Tips</div>
-                <div className={styles.navItem}>MDRRMO Resource</div>
+                <div className={styles.navItem} onClick={() => navigate('/resources')}>MDRRMO Resource</div>
             </div>
-            <div className={styles.reportButton}>Report Now</div>
+            <div className={styles.reportButton} onClick={() => navigate('/report')}>Report Now</div>
         </div>
     );  
 }

@@ -1,8 +1,12 @@
 import React from 'react';
 import styles from './Homepage.module.css'
 import Navbar from '../pages/Navbar'
+import { useNavigate } from 'react-router-dom';
 
 export default function Homepage(){
+
+    const navigate = useNavigate();
+
     return(
         <>
             <div className={styles.container}>
@@ -50,7 +54,7 @@ export default function Homepage(){
                         <div className={styles.discoverMore}>Discover More</div>
                     </div>
                 </div>  
-                <div className={styles.fourthContent}>
+                {/* <div className={styles.fourthContent}>
                     <div className={styles.fourthHeader} style={{fontSize:"2.5rem", color:"black", fontWeight:"bold"}}>Disaster Management Initiatives</div>
                     <div className={styles.fourthSubHeader} style={{fontSize:"1rem", color:"#374151"}}>Explore our gallery showcasing the efforts and responses in managing disasters effectively.</div>
                     <div className={styles.gallery}>
@@ -61,7 +65,7 @@ export default function Homepage(){
                         <img src="" alt='' className={styles.imageWrap}></img>
                         <img src="" alt='' className={styles.imageWrap}></img>
                     </div>
-                </div>
+                </div> */}
                 <div className={styles.fifthContent}>
                     <div className={styles.cardContent}>
                         <div className={styles.cardText} style={{fontSize:"1.5rem", color:"white", fontWeight:"bold"}}>The Municipal Disaster Hub has been an invaluable resource in keeping our community
@@ -80,14 +84,14 @@ export default function Homepage(){
                             resident. Discover the latest disaster news and essential updates right here.
                         </div>
                         <div className={styles.sixthButtons} style={{marginBottom:"2rem"}}>
-                            <div className={styles.preparednessButton}>Get Preparedness Tips</div>
-                            <div className={styles.exploreMDRRMOButton}>Explore MDRRMO Resources</div>
+                            <div className={styles.preparednessButton} onClick={() => navigate('/preparedness')}>Get Preparedness Tips</div>
+                            <div className={styles.exploreMDRRMOButton} onClick={() => navigate('/resources')}>Explore MDRRMO Resources</div>
                         </div>
-                        <div className={styles.icons}>
+                        {/* <div className={styles.icons}>
                             <i class="fa-brands fa-facebook-f"></i>
                             <i class="fa-brands fa-twitter"></i>
                             <i class="fa-brands fa-instagram"></i>
-                        </div>
+                        </div> */}
                     </div>
                     <div className={styles.rightCardSix}></div>
                 </div>
@@ -125,10 +129,10 @@ export default function Homepage(){
                     </div>
                     <div className={styles.belowFooter}>
                         <div className={styles.iconLinks}>
-                            <i class="fa-brands fa-twitter"></i>
-                            <i class="fa-brands fa-facebook"></i>
-                            <i class="fa-brands fa-instagram"></i>
-                            <i class="fa-brands fa-reddit"></i>
+                            {/* <i class="fa-brands fa-twitter"></i> */}
+                            <i class="fa-brands fa-facebook"><a href='https://www.facebook.com/mdrrmo.staana.7'></a></i>
+                            {/* <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-reddit"></i> */}
                         </div>
                         <div className={styles.allRights}>© 2023 Municipal Disaster Hub, Santa Ana. All Rights Reserved.</div>
                     </div>
