@@ -2,8 +2,24 @@ import React from 'react';
 import styles from './Resources.module.css';
 import Navbar from '../pages/Navbar';
 import inventory from '../assets/inventory.pdf';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Resources(){
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    useEffect(() => {
+        scrollToTop();
+    }, []);
+
+    const navigatee = useNavigate();
+
     return(
         <>
             <div className={styles.container}>
@@ -22,18 +38,16 @@ export default function Resources(){
                 <div className={styles.footer}>
                     <div className={styles.aboveFooter}>
                         <div className={styles.navLinks}>
-                            <span>Municipal Disaster Hub</span>
-                            <span>Emergency Help</span>
-                            <span>MDRRMO Resources</span>
-                            <span>Contact Us</span>
+                            <span onClick={() => navigatee('/')}>Municipal Disaster Hub</span>
+                            <span onClick={() => navigatee('/resources')}>MDRRMO Resources</span>
                         </div>
                     </div>
                     <div className={styles.belowFooter}>
                         <div className={styles.iconLinks}>
-                            <i class="fa-brands fa-twitter"></i>
+                            {/* <i class="fa-brands fa-twitter"></i>
                             <i class="fa-brands fa-facebook"></i>
                             <i class="fa-brands fa-instagram"></i>
-                            <i class="fa-brands fa-reddit"></i>
+                            <i class="fa-brands fa-reddit"></i> */}
                         </div>
                         <div className={styles.allRights}>© 2023 Municipal Disaster Hub, Santa Ana. All Rights Reserved.</div>
                     </div>

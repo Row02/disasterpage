@@ -9,8 +9,24 @@ import image1 from '../assets/image1.png';
 import image2 from '../assets/image2.png';
 import image3 from '../assets/image3.png';
 import image4 from '../assets/image4.png';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Preparedness(){
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    useEffect(() => {
+        scrollToTop();
+    }, []);
+
+    const navigate = useNavigate();
+    
     return(
         <>
             <div className={styles.container}>
@@ -42,7 +58,7 @@ export default function Preparedness(){
                                 Your browser does not support the video tag.
                             </video>
                             <span>Flood Preparedness Measures</span>
-                            <img src={image2} alt='Poster Flood' className={styles.posters}></img>
+                            <img src={image4} alt='Poster Flood' className={styles.posters}></img>
                         </div>
                         <div className={styles.cardInfo}>
                             <video controls className={styles.cardVideo}>
@@ -50,7 +66,7 @@ export default function Preparedness(){
                                 Your browser does not support the video tag.
                             </video>
                             <span>Typhoon Safety Tips</span>
-                            <img src={image3} alt='Poster Typhoon' className={styles.posters}></img>
+                            <img src={image2} alt='Poster Typhoon' className={styles.posters}></img>
                         </div>
                         <div className={styles.cardInfo}>
                             <video controls className={styles.cardVideo}>
@@ -58,7 +74,7 @@ export default function Preparedness(){
                                 Your browser does not support the video tag.
                             </video>
                             <span>Earthquake Readiness Guidelines</span>
-                            <img src={image4} alt='Poster Eathquake' className={styles.posters}></img>
+                            <img src={image3} alt='Poster Eathquake' className={styles.posters}></img>
                         </div>
                     </div>
                 </div>
@@ -69,24 +85,22 @@ export default function Preparedness(){
                             difference.
                         </div>
                         <div className={styles.cardAuthor} style={{marginTop:"1.5rem", fontWeight:"bold"}}>Marites S. Franco</div>
-                        <div className={styles.cardDetails}>Resident of Santa Ana</div>
+                        <div className={styles.cardDetails}>Head of Santa Ana Pampanga MDRRMO</div>
                     </div>
                 </div>
                 <div className={styles.footer}>
                     <div className={styles.aboveFooter}>
                         <div className={styles.navLinks}>
-                            <span>Municipal Disaster Hub</span>
-                            <span>Emergency Help</span>
-                            <span>MDRRMO Resources</span>
-                            <span>Contact Us</span>
+                            <span onClick={() => navigate('/')}>Municipal Disaster Hub</span>
+                            <span onClick ={() => navigate('/resources')}>MDRRMO Resources</span>
                         </div>
                     </div>
                     <div className={styles.belowFooter}>
                         <div className={styles.iconLinks}>
-                            <i class="fa-brands fa-twitter"></i>
+                            {/* <i class="fa-brands fa-twitter"></i>
                             <i class="fa-brands fa-facebook"></i>
                             <i class="fa-brands fa-instagram"></i>
-                            <i class="fa-brands fa-reddit"></i>
+                            <i class="fa-brands fa-reddit"></i> */}
                         </div>
                         <div className={styles.allRights}>© 2023 Municipal Disaster Hub, Santa Ana. All Rights Reserved.</div>
                     </div>

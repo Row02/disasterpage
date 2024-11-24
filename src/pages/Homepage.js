@@ -2,9 +2,20 @@ import React from 'react';
 import styles from './Homepage.module.css'
 import Navbar from '../pages/Navbar'
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function Homepage(){
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    useEffect(() => {
+        scrollToTop();
+    }, []);
     const navigate = useNavigate();
 
     return(
@@ -23,8 +34,8 @@ export default function Homepage(){
                         <div className={styles.header} style={{fontSize:"3rem", color:"black", fontWeight:"bold"}}>Urgent Disaster Updates</div>
                         <div className={styles.context}>Access critical information and stay prepared with the latest updates from the Municipal Disaster Risk Reduction and Management Office.</div>
                         <div className={styles.buttons}>
-                            <div className={styles.learnMore}>Learn More</div>
-                            <div className={styles.viewResource}>View Resources</div>
+                            <div className={styles.learnMore} onClick={() => navigate('/preparedness')}>Learn More</div>
+                            <div className={styles.viewResource} onClick={() => navigate('/resources')}>View Resources</div>
                         </div>
                     </div>
                 </div>
@@ -35,7 +46,7 @@ export default function Homepage(){
                         <div className={styles.header} style={{fontSize:"3rem", color:"black", fontWeight:"bold"}}>Latest Disaster News</div>
                         <div className={styles.context} style={{fontSize:"1.5rem", color:"#374151"}}>Get the most recent updates on ongoing disaster situations affecting Santa Ana. Stay informed with accurate and timely information.</div>
                         <div className={styles.subHeader}>
-                            <div className={styles.features}>
+                            {/* <div className={styles.features}>
                                 <div className={styles.icon}></div>
                                 <div className={styles.messageHeader} style={{fontSize:"1rem", color:"black", fontWeight:"bold"}}>Real-Time Notifications</div>
                                 <div className={styles.message} style={{fontSize:"1rem", color:"#374151"}}>Receive instant alerts on your device for any new disaster updates.</div>
@@ -49,9 +60,9 @@ export default function Homepage(){
                                 <div className={styles.icon}></div>
                                 <div className={styles.messageHeader} style={{fontSize:"1rem", color:"black", fontWeight:"bold"}}>Community Support</div>
                                 <div className={styles.message} style={{fontSize:"1rem", color:"#374151"}}>Join community efforts and volunteer to aid those affected by disasters.</div>
-                            </div>
+                            </div> */}
                         </div>
-                        <div className={styles.discoverMore}>Discover More</div>
+                        <div className={styles.discoverMore} onClick={() => navigate('/preparedness')}>Discover More</div>
                     </div>
                 </div>  
                 {/* <div className={styles.fourthContent}>
@@ -72,8 +83,8 @@ export default function Homepage(){
                             informed and prepared during emergencies. Their timely updates and comprehensive resources have made a significant
                             difference.
                         </div>
-                        <div className={styles.cardAuthor} style={{marginTop:"1.5rem", fontWeight:"bold"}}>Yrwynn Maliwat</div>
-                        <div className={styles.cardDetails}>Resident of Santa Ana</div>
+                        <div className={styles.cardAuthor} style={{marginTop:"1.5rem", fontWeight:"bold"}}>Marites S. Franco</div>
+                        <div className={styles.cardDetails}>Head of Santa Ana Pampanga MDRRMO</div>
                     </div>
                 </div>
                 <div className={styles.sixthContent}>
@@ -121,16 +132,14 @@ export default function Homepage(){
                 <div className={styles.footer}>
                     <div className={styles.aboveFooter}>
                         <div className={styles.navLinks}>
-                            <span>Municipal Disaster Hub</span>
-                            <span>Emergency Help</span>
-                            <span>MDRRMO Resources</span>
-                            <span>Contact Us</span>
+                            <span onClick={() => navigate('/')}>Municipal Disaster Hub</span>
+                            <span onClick={() => navigate('/resources')}>MDRRMO Resources</span>
                         </div>
                     </div>
                     <div className={styles.belowFooter}>
                         <div className={styles.iconLinks}>
                             {/* <i class="fa-brands fa-twitter"></i> */}
-                            <i class="fa-brands fa-facebook"><a href='https://www.facebook.com/mdrrmo.staana.7'></a></i>
+                            {/* <i class="fa-brands fa-facebook"><a href='https://www.facebook.com/mdrrmo.staana.7'></a></i> */}
                             {/* <i class="fa-brands fa-instagram"></i>
                             <i class="fa-brands fa-reddit"></i> */}
                         </div>
