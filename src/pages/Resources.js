@@ -49,7 +49,7 @@ export default function Resources(){
                             <i class="fa-brands fa-instagram"></i>
                             <i class="fa-brands fa-reddit"></i> */}
                         </div>
-                        <div className={styles.allRights}>© 2023 Municipal Disaster Hub, Santa Ana. All Rights Reserved.</div>
+                        <div className={styles.allRights}>© 2024 Municipal Disaster Hub, Santa Ana. All Rights Reserved.</div>
                     </div>
                 </div>
             </div>
