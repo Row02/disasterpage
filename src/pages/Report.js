@@ -15,18 +15,37 @@ export default function Report() {
         message: '',
         incidentTime: '',
         location: '',
+        picture: '', // Store Base64 image data here
     });
 
     const handleChange = (e) => {
-        const { id, value } = e.target;
-        setFormData({ ...formData, [id]: value });
+        const { id, value, files } = e.target;
+        if (id === "picture" && files.length > 0) {
+            const file = files[0];
+            convertToBase64(file); // Convert image to Base64
+        } else {
+            setFormData({ ...formData, [id]: value });
+        }
+    };
+
+    // Convert the image file to Base64
+    const convertToBase64 = (file) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setFormData((prevData) => ({
+                ...prevData,
+                picture: reader.result, // Store Base64 result
+            }));
+        };
+        reader.readAsDataURL(file); // Convert file to Base64
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            await addDoc(collection(db, "tickets"), formData); // Adds a new document to "tickets"
+            // Save report data to Firestore, including Base64 image string if available
+            await addDoc(collection(db, "tickets"), formData);
             alert("Report submitted successfully!");
             setFormData({
                 name: '',
@@ -36,6 +55,7 @@ export default function Report() {
                 message: '',
                 incidentTime: '',
                 location: '',
+                picture: '', // Reset picture field
             });
 
             navigate('/');
@@ -51,6 +71,7 @@ export default function Report() {
             <div className={styles.formContainer}>
                 <h2 className={styles.formTitle}>Report an Incident</h2>
                 <form className={styles.reportForm} onSubmit={handleSubmit}>
+                    {/* Existing form fields */}
                     <div className={styles.inputGroup}>
                         <label htmlFor="name">Name</label>
                         <input
@@ -109,6 +130,16 @@ export default function Report() {
                             placeholder="Provide a brief description..."
                             required
                         ></textarea>
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="picture">Upload Picture</label>
+                        <input
+                            type="file"
+                            id="picture"
+                            accept="image/*"
+                            onChange={handleChange}
+                        />
+                        <small className={styles.helperText}>Upload an image (optional)</small>
                     </div>
                     <div className={styles.inputGroup}>
                         <label htmlFor="incidentTime">Time of the Incident</label>
