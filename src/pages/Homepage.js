@@ -28,7 +28,7 @@ export default function Homepage(){
                     <h1>Take Action Today.</h1>
                     <p>Stay updated with the latest incident reports and alerts from the Santa Ana, <br/>Pampanga MDRRMO.</p>
                 </div>
-                <div className={styles.secondContent}>
+                {/* <div className={styles.secondContent}>
                     <div className={styles.cardContainer}>
                         <div className={styles.mini} style={{fontSize:"1rem", color:"#4b8cf7"}}>Real-Time Alerts for Santa Ana</div>
                         <div className={styles.header} style={{fontSize:"3rem", color:"black", fontWeight:"bold"}}>Urgent Disaster Updates</div>
@@ -38,7 +38,7 @@ export default function Homepage(){
                             <div className={styles.viewResource} onClick={() => navigate('/resources')}>View Resources</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className={styles.thirdContent}>
                     <div className={styles.leftCard}></div>
                     <div className={styles.rightCard}>
