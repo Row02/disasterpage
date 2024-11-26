@@ -19,7 +19,10 @@
     padding: 5rem 3rem;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to bottom right, #87ceeb, #6495ed);
+    background-image: linear-gradient(rgba(46, 72, 204, 0.5), rgba(46, 72, 204, 0.5)), url("../assets/resourceBg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .firstCard{
@@ -41,7 +44,7 @@
     width: 100%;
     height: auto;
     background-color: #05206e;
-    padding: 6rem 2rem;
+    padding: 2rem;
 }
 
 .navLinks{
@@ -51,7 +54,7 @@
     color: white;
     font-weight: bold;
     gap: 3rem;
-    padding-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 .aboveFooter{
@@ -59,7 +62,7 @@
 }
 
 .belowFooter{
-    padding-top: 4rem;
+    padding-top: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -70,8 +73,4 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
-}
-
-.iconLinks i{
-    cursor: pointer;
 }

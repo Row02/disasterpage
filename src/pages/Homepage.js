@@ -1,50 +1,74 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './Homepage.module.css'
 import Navbar from '../pages/Navbar'
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { TransformWrapper, TransformComponent, useControls } from "react-zoom-pan-pinch";
+import imageMap from '../assets/imageMap.jpg'
 
 export default function Homepage(){
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
+    const navigate = useNavigate();
 
     useEffect(() => {
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        };
         scrollToTop();
     }, []);
-    const navigate = useNavigate();
+
+    const Controls = ({ zoomIn, zoomOut, resetTransform }) => {
+        return (
+            <div className={styles.tools}>
+                <button className={styles.zoomButton} onClick={() => zoomIn()}>Zoom In</button>
+                <button className={styles.zoomButton} onClick={() => zoomOut()}>Zoom Out</button>
+                <button className={styles.resetButton} onClick={() => resetTransform()}>Reset</button>
+            </div>
+        );
+    };
+    
 
     return(
         <>
             <div className={styles.container}>
                 <Navbar/>
                 <div className={styles.firstContent}>
-                    <h1>Be Prepared.</h1>
-                    <h1>Stay Safe.</h1>
-                    <h1>Take Action Today.</h1>
-                    <p>Stay updated with the latest incident reports and alerts from the Santa Ana, <br/>Pampanga MDRRMO.</p>
-                </div>
-                {/* <div className={styles.secondContent}>
-                    <div className={styles.cardContainer}>
-                        <div className={styles.mini} style={{fontSize:"1rem", color:"#4b8cf7"}}>Real-Time Alerts for Santa Ana</div>
-                        <div className={styles.header} style={{fontSize:"3rem", color:"black", fontWeight:"bold"}}>Urgent Disaster Updates</div>
-                        <div className={styles.context}>Access critical information and stay prepared with the latest updates from the Municipal Disaster Risk Reduction and Management Office.</div>
-                        <div className={styles.buttons}>
-                            <div className={styles.learnMore} onClick={() => navigate('/preparedness')}>Learn More</div>
-                            <div className={styles.viewResource} onClick={() => navigate('/resources')}>View Resources</div>
-                        </div>
+                    <p style={{textShadow: '1px 1px 2px black', fontSize:"2.5rem", fontWeight:"bold"}}>Centralized Online Hub for Information and Resources of the Municipality of Santa Ana, Pampanga MDRRMO</p>
+                    <div className={styles.spanHolder}>
+                        <span style={{textShadow: '2px 2px 4px black', fontWeight:"bold"}}>Be Prepared.</span>
+                        <span style={{textShadow: '2px 2px 4px black', fontWeight:"bold"}}>Stay Safe.</span>
+                        <span style={{textShadow: '2px 2px 4px black', fontWeight:"bold"}}>Take Action Today.</span>
                     </div>
-                </div> */}
+                </div>
                 <div className={styles.thirdContent}>
-                    <div className={styles.leftCard}></div>
+                    <div className={styles.leftCard}>
+                        <TransformWrapper
+                            initialScale={1}
+                            initialPositionX={0}
+                            initialPositionY={0}
+                        >
+                            {({ zoomIn, zoomOut, resetTransform }) => (
+                                <>
+                                    <Controls zoomIn={zoomIn} zoomOut={zoomOut} resetTransform={resetTransform} />
+                                    <TransformComponent>
+                                        <img
+                                            src={imageMap}
+                                            alt="imageMap"
+                                            className={styles.imageMap}
+                                        />
+                                    </TransformComponent>
+                                </>
+                            )}
+                        </TransformWrapper>
+                    </div>
+
                     <div className={styles.rightCard}>
                         <div className={styles.mini} style={{fontSize:"1.5rem", color:"#4b8cf7", fontWeight:"bold"}}>Stay Updated</div>
-                        <div className={styles.header} style={{fontSize:"3rem", color:"black", fontWeight:"bold"}}>Latest Disaster News</div>
-                        <div className={styles.context} style={{fontSize:"1.5rem", color:"#374151"}}>Get the most recent updates on ongoing disaster situations affecting Santa Ana. Stay informed with accurate and timely information.</div>
+                        <div className={styles.header} style={{fontSize:"3rem", color:"black", fontWeight:"bold"}}>Evacuation Location</div>
+                        <div className={styles.context} style={{fontSize:"1.5rem", color:"#374151"}}>The locations of the evacuation centers for each barangay in Santa Ana, Pampanga.</div>
                         <div className={styles.subHeader}>
                             {/* <div className={styles.features}>
                                 <div className={styles.icon}></div>
@@ -62,7 +86,7 @@ export default function Homepage(){
                                 <div className={styles.message} style={{fontSize:"1rem", color:"#374151"}}>Join community efforts and volunteer to aid those affected by disasters.</div>
                             </div> */}
                         </div>
-                        <div className={styles.discoverMore} onClick={() => navigate('/preparedness')}>Discover More</div>
+                        {/* <div className={styles.discoverMore} onClick={() => navigate('/preparedness')}>Discover More</div> */}
                     </div>
                 </div>  
                 {/* <div className={styles.fourthContent}>
@@ -91,8 +115,8 @@ export default function Homepage(){
                     <div className={styles.leftCardSix}>
                         <div className={styles.sixthHeader} style={{fontSize:"3.5rem", color:"#0f172a", fontWeight:"bolder", lineHeight:"1", marginBottom:"1rem"}}>Santa Ana Community Alert</div>
                         <div className={styles.miniHeader} style={{fontSize:"1.2rem", fontWeight:"bold", color:"#0f172a", marginBottom:"1rem"}}>Stay informed, Stay safe</div>
-                        <div className={styles.sixthContext} style={{fontSize:"1rem", color:"#0f172a", marginBottom:"2rem"}}>Join us in our mission to ensure the safety and preparedness of every Santa Ana
-                            resident. Discover the latest disaster news and essential updates right here.
+                        <div className={styles.sixthContext} style={{fontSize:"1rem", color:"#0f172a", marginBottom:"2rem"}}>Ensure the safety and preparedness of every resident in
+                            Santa Ana, Pampanga
                         </div>
                         <div className={styles.sixthButtons} style={{marginBottom:"2rem"}}>
                             <div className={styles.preparednessButton} onClick={() => navigate('/preparedness')}>Get Preparedness Tips</div>
@@ -109,24 +133,24 @@ export default function Homepage(){
                 <div className={styles.seventhContent}>
                     <div className={styles.aboveContent}>
                         <div className={styles.aboveLeft}>
-                            <div className={styles.seventhHeader} style={{fontSize:"4rem", color:"#0f172a", fontWeight:"bold"}}>Contact the MDRRMO</div>
+                            <div className={styles.seventhHeader} style={{fontSize:"4rem", color:"#0f172a", fontWeight:"bold"}}>Contact our Rescue Team</div>
                             <div className={styles.seventhText} style={{fontSize:"1rem", color:"#0f172a"}}>Reach out to us for quick reporting and inquiries. We're here to help 24/7.</div>
+                            <div className={styles.sectionHolder}>
+                                <div className={styles.sections}>
+                                    <div className={styles.secTitle}>SANTA ANA OFFICE</div>
+                                    <div className={styles.secText}>Monday-Sunday 24/7</div>
+                                </div>
+                                <div className={styles.sections}>
+                                    <div className={styles.secTitle}>Our Address</div>
+                                    <div className={styles.secText}>Jose Abad Santos Ave, Santa Ana, Pampanga</div>
+                                </div>
+                                <div className={styles.sections}>
+                                    <div className={styles.secTitle}>Get in touch</div>
+                                    <div className={styles.secText}>+63 997 788 4690</div>
+                                </div>
+                            </div>
                         </div>
                         <div className={styles.aboveRight}></div>
-                    </div>
-                    <div className={styles.belowContent}>
-                        <div className={styles.sections}>
-                            <div className={styles.secTitle}>SANTA ANA OFFICE</div>
-                            <div className={styles.secText}>Monday-Sunday 24/7</div>
-                        </div>
-                        <div className={styles.sections}>
-                            <div className={styles.secTitle}>Our Address</div>
-                            <div className={styles.secText}>Santa Ana, Pampanga</div>
-                        </div>
-                        <div className={styles.sections}>
-                            <div className={styles.secTitle}>Get in touch</div>
-                            <div className={styles.secText}>+63 912 3456 789</div>
-                        </div>
                     </div>
                 </div>
                 <div className={styles.footer}>

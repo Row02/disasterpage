@@ -5,7 +5,7 @@
 .container {
     box-sizing: border-box;
     min-height: 100vh;
-    max-width: 1400px; /* Maximum width of the content */
+    max-width: 1800px; /* Maximum width of the content */
     width: 100%;
     margin: 0 auto; 
     z-index: 1;
@@ -21,7 +21,8 @@
     padding: 4em 3em;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    align-items: center;
+    justify-content: center;
     color: white;
 }
 
@@ -30,7 +31,22 @@
 }
 
 .firstContent p{
-    font-size: 1.1rem;
+    display: flex;
+    text-align: center;
+}
+
+.spanHolder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.spanHolder span{
+    font-size: 2rem;
 }
 
 .secondContent{
@@ -77,27 +93,70 @@
 }
 
 .thirdContent{
-    height: 42em;
+    height: auto;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding: 4rem;
 }
 
-.leftCard{
-    width: 50%;
-    height: 100%;
-    background-image: url("../assets/map.jpg");
-    background-size: cover;
-    background-position: center;
+.leftCard {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
+
+.imageMap {
+    width: auto;  
+    object-fit: contain; 
+    max-width: 100%; 
+}
+
+.tools {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+    margin: 2rem;
+}
+
+.zoomButton, .resetButton {
+    padding: 10px 20px;
+    background-color: #4b8cf7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.zoomButton:hover, .resetButton:hover {
+    background-color: #3578d6;
+}
+
+.resetButton {
+    background-color: #ff6347;
+}
+
+.resetButton:hover {
+    background-color: #e53e3e;
+}
+
+
 
 .rightCard{
-    width: 50%;
+    width: 100%;
     height: 100%;
-    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1rem;
 }
 
 .subHeader{
@@ -151,11 +210,10 @@
 
 .fifthContent{
     width: 100%;
-    height: 39em;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 4rem;
 }
 
 .cardContent{
@@ -164,7 +222,6 @@
     padding: 6rem;
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
     gap: .5rem;
     background-image: linear-gradient(rgba(46, 72, 204, 0.5), rgba(46, 72, 204, 0.5)), url("../assets/building.JPG");
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -179,6 +236,7 @@
     height: 39em;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 3rem;
     gap: 5rem;
 }
@@ -241,9 +299,9 @@
 }
 
 .rightCardSix{
-    width: 38%;
+    width: 45%;
     height: 23em;
-    background-image: url("../assets/photo.jfif");
+    background-image: url("../assets/photo.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 1rem;
@@ -251,7 +309,8 @@
 
 .seventhContent{
     width: 100%;
-    height: 39em;
+    height: auto;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
 }
@@ -262,6 +321,11 @@
     display: flex;
     flex-direction: row;
     padding: 2rem;
+    justify-content: space-between;
+}
+
+.seventhText{
+    margin-bottom: 3rem;
 }
 
 .aboveLeft{
@@ -270,10 +334,10 @@
 }
 
 .aboveRight{
-    background-image: url("../assets/phone.jpeg");
+    background-image: url("../assets/phone.jpg");
     background-size: cover;
     background-position: center;
-    width: 50%;
+    width: 45%;
     border-radius: 1rem;
     height: 100%;
 }
@@ -285,11 +349,18 @@
     gap: 10rem;
     padding: 3rem;
 }
+.sectionHolder{
+    display: flex;
+    width: 100%;
+    gap: 3rem;
+    flex-direction: row;
+}
 
 .sections{
     display: flex;
     gap: 1rem;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .secTitle{
@@ -301,7 +372,7 @@
     width: 100%;
     height: auto;
     background-color: #05206e;
-    padding: 6rem 2rem;
+    padding: 2rem;
 }
 
 .navLinks{
@@ -311,7 +382,7 @@
     color: white;
     font-weight: bold;
     gap: 3rem;
-    padding-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 .aboveFooter{
@@ -319,7 +390,7 @@
 }
 
 .belowFooter{
-    padding-top: 4rem;
+    padding-top: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

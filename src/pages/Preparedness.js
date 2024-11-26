@@ -1,18 +1,16 @@
-import React from 'react';
 import styles from './Preparedness.module.css'
 import Navbar from '../pages/Navbar'
-import fire from '../assets/videos/fire.mp4'
-import flood from '../assets/videos/flood.mp4';
-import typhoon from '../assets/videos/typhoon.mp4';
-import earthquake from '../assets/videos/earthquake.mp4';
 import image1 from '../assets/image1.png';
 import image2 from '../assets/image2.png';
 import image3 from '../assets/image3.png';
 import image4 from '../assets/image4.png';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Preparedness(){
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -26,6 +24,16 @@ export default function Preparedness(){
     }, []);
 
     const navigate = useNavigate();
+
+    const handleImageClick = (image) => {
+        setSelectedImage(image);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedImage(null);
+    };
     
     return(
         <>
@@ -33,9 +41,9 @@ export default function Preparedness(){
                 <Navbar/>
                 <div className={styles.firstContainer}>
                     <div className={styles.firstCard}>
-                        <div className={styles.mini} style={{fontSize:"1rem", color:"#4b8cf7", fontWeight:"bold"}}>Stay Informed, Stay Safe</div>
-                        <div className={styles.header} style={{fontSize:"4rem", color:"#0f172a", fontWeight:"bold", lineHeight:"1.1"}}>Disaster <br/>Preparedness Guide</div>
-                        <div className={styles.context} style={{fontSize:"1rem", color:"#374151", marginTop:"1rem"}}>Essential strategies and resources for Santa Ana residents to effectively prepare for potential disasters.</div>
+                        <div className={styles.mini} style={{fontSize:"1rem", color:"white", fontWeight:"bold", textShadow: "2px 2px 4px black"}}>Stay Informed, Stay Safe</div>
+                        <div className={styles.header} style={{fontSize:"4rem", color:"white", fontWeight:"bold", lineHeight:"1.1", textShadow: "2px 2px 4px black"}}>Disaster <br/>Preparedness Guide</div>
+                        <div className={styles.context} style={{fontSize:"1rem", color:"white", marginTop:"1rem", textShadow: "2px 2px 4px black"}}>Essential strategies and resources for Santa Ana residents to effectively prepare for potential disasters.</div>
                     </div>
                 </div>
                 <div className={styles.secondContainer}>
@@ -44,38 +52,16 @@ export default function Preparedness(){
                         <div className={styles.aboveText}>Comprehensive steps to ensure safety during fires, floods, typhoons, and earthquakes.</div>
                     </div>
                     <div className={styles.belowContent}>
-                        <div className={styles.cardInfo}>
-                            <video controls className={styles.cardVideo}>
-                                <source src={fire} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                            <span>Fire Safety Precautions</span>
-                            <img src={image1} alt='Poster Fire' className={styles.posters}></img>
-                        </div>
-                        <div className={styles.cardInfo}>
-                            <video controls className={styles.cardVideo}>
-                                <source src={flood} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                            <span>Flood Preparedness Measures</span>
-                            <img src={image4} alt='Poster Flood' className={styles.posters}></img>
-                        </div>
-                        <div className={styles.cardInfo}>
-                            <video controls className={styles.cardVideo}>
-                                <source src={typhoon} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                            <span>Typhoon Safety Tips</span>
-                            <img src={image2} alt='Poster Typhoon' className={styles.posters}></img>
-                        </div>
-                        <div className={styles.cardInfo}>
-                            <video controls className={styles.cardVideo}>
-                                <source src={earthquake} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                            <span>Earthquake Readiness Guidelines</span>
-                            <img src={image3} alt='Poster Eathquake' className={styles.posters}></img>
-                        </div>
+                        {[image1, image4, image2, image3].map((img, index) => (
+                            <div
+                                key={index}
+                                className={styles.cardInfo}
+                                onClick={() => handleImageClick(img)}
+                                style={{ cursor: "pointer" }}
+                            >
+                                <img src={img} alt={`Poster ${index}`} className={styles.posters} />
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <div className={styles.thirdContent}>
@@ -105,6 +91,14 @@ export default function Preparedness(){
                         <div className={styles.allRights}>© 2024 Municipal Disaster Hub, Santa Ana. All Rights Reserved.</div>
                     </div>
                 </div>
+                {isModalOpen && (
+                <div className={styles.modal} onClick={closeModal}>
+                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                        <img src={selectedImage} alt="Zoomed In" className={styles.zoomedImage} />
+                        <button className={styles.closeButton} onClick={closeModal}>X</button>
+                    </div>
+                </div>
+                )}
             </div>
         </>
     );

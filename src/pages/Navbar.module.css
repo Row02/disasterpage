@@ -52,3 +52,7 @@
     padding: .5em 2em;
     border-radius: 2rem;
 }
+
+.reportButton:hover{
+    background-color: #e8f5ff;
+}

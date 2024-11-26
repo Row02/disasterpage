@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Resources.module.css';
 import Navbar from '../pages/Navbar';
-import inventory from '../assets/inventory.pdf';
+import inventory from '../assets/inventory22.pdf';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ export default function Resources(){
         scrollToTop();
     }, []);
 
-    const navigatee = useNavigate();
+    const navigate = useNavigate();
 
     return(
         <>
@@ -26,8 +26,8 @@ export default function Resources(){
                 <Navbar/>
                 <div className={styles.firstContainer}>
                     <div className={styles.firstCard}>
-                        <div className={styles.header} style={{fontSize:"4rem", color:"#0f172a", fontWeight:"bold", lineHeight:"1.1"}}>MDRRMO <br/>Resources</div>
-                        <div className={styles.context} style={{fontSize:"1rem", color:"#374151", marginTop:"1rem"}}>Explore the comprehensive resources and aid provided by the Santa Ana MDRRMO to support our community in times of need.</div>
+                        <div className={styles.header} style={{fontSize:"4rem", color:"white", fontWeight:"bold", lineHeight:"1.1", textShadow:"2px 2px 4px black"}}>MDRRMO <br/>Resources</div>
+                        <div className={styles.context} style={{fontSize:"1rem", color:"white", marginTop:"1rem", textShadow:"2px 2px 4px black"}}>Explore the comprehensive resources and aid provided by the Santa Ana MDRRMO to support our community in times of need.</div>
                     </div>
                 </div>
                 <div className={styles.secondContainer}>
@@ -38,8 +38,8 @@ export default function Resources(){
                 <div className={styles.footer}>
                     <div className={styles.aboveFooter}>
                         <div className={styles.navLinks}>
-                            <span onClick={() => navigatee('/')}>Municipal Disaster Hub</span>
-                            <span onClick={() => navigatee('/resources')}>MDRRMO Resources</span>
+                            <span onClick={() => navigate('/')}>Municipal Disaster Hub</span>
+                            <span onClick={() => navigate('/resources')}>MDRRMO Resources</span>
                         </div>
                     </div>
                     <div className={styles.belowFooter}>

@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    box-sizing: border-box;
+    min-height: 100vh;
+    max-width: 1400px; /* Maximum width of the content */
+    width: 100%;
+    margin: 0 auto; 
+    z-index: 1;
+}
+
+.headContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-image: linear-gradient(rgba(46, 72, 204, 0.5), rgba(46, 72, 204, 0.5)), url("../assets/contactBackground.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.pictureHolder{
+    width: 100%;
+    height: 42em;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pictureHolder .picture{
+    width: 100%;
+    height: 40em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: #05206e;
+    padding: 2rem;
+}
+
+.navLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    gap: 3rem;
+    margin-bottom: 1rem;
+}
+
+.aboveFooter{
+    border-bottom: 1px solid #1a347b;
+}
+
+.belowFooter{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+}
+
+.iconLinks{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.divSpace{
+    width: 100%;
+    height: 10em;
+}
+
+.pictureContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    display: flex;
+    justify-content: center;
+}
+
+.picture{
+    width: auto;
+    height: 40em;
+
+}

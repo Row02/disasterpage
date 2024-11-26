@@ -19,6 +19,10 @@
     padding: 5rem 3rem;
     display: flex;
     flex-direction: column;
+    background-image: linear-gradient(rgba(46, 72, 204, 0.5), rgba(46, 72, 204, 0.5)), url("../assets/preparedness.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .firstCard{
@@ -71,7 +75,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10rem 4rem;
 }
 
 .cardContent{
@@ -80,7 +83,6 @@
     padding: 6rem;
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
     gap: .5rem;
     background-image: linear-gradient(rgba(46, 72, 204, 0.5), rgba(46, 72, 204, 0.5)), url("../assets/building.JPG");
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -90,12 +92,11 @@
     filter: blur(.6px);
 }
 
-
 .footer{
     width: 100%;
     height: auto;
     background-color: #05206e;
-    padding: 6rem 2rem;
+    padding: 2rem;
 }
 
 .navLinks{
@@ -105,7 +106,7 @@
     color: white;
     font-weight: bold;
     gap: 3rem;
-    padding-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 .aboveFooter{
@@ -113,7 +114,7 @@
 }
 
 .belowFooter{
-    padding-top: 4rem;
+    padding-top: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -124,10 +125,6 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
-}
-
-.iconLinks i{
-    cursor: pointer;
 }
 
 .cardVideo {
@@ -141,4 +138,53 @@
     height: 22em;
     width: auto;
     object-fit: cover;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    position: relative;
+    width: auto;
+    height: 42em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.zoomedImage {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    padding: 5px 10px;
+    background: #fff;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.closeButton:hover {
+    background: #f44336;
+    color: white;
 }

@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage';
 import Preparedness from './pages/Preparedness'
 import Resources from './pages/Resources'
 import Report from './pages/Report';
+import About from './pages/About';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/preparedness" element={<Preparedness />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/report" element={<Report />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </Router>
     </>
