@@ -1,9 +1,7 @@
 import styles from './Preparedness.module.css'
 import Navbar from '../pages/Navbar'
-import image1 from '../assets/image1.png';
-import image2 from '../assets/image2.png';
-import image3 from '../assets/image3.png';
-import image4 from '../assets/image4.png';
+import image1 from '../assets/image1.jpg';
+import image4 from '../assets/image4.jpg';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -52,7 +50,7 @@ export default function Preparedness(){
                         <div className={styles.aboveText}>Comprehensive steps to ensure safety during fires, floods, typhoons, and earthquakes.</div>
                     </div>
                     <div className={styles.belowContent}>
-                        {[image1, image4, image2, image3].map((img, index) => (
+                        {[image1, image4].map((img, index) => (
                             <div
                                 key={index}
                                 className={styles.cardInfo}

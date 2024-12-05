@@ -54,14 +54,15 @@
     width: 100%;
     height: auto;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .cardInfo{
     display: flex;
-    width: 18em;
+    width: auto;
     height: auto;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     padding: 1rem;
     border: 1px solid grey;
@@ -128,14 +129,13 @@
 }
 
 .cardVideo {
-    width: 100%;
+    width: auto;
     height: auto;
     margin-bottom: 1rem;
 }
 
 .posters{
-    margin-top: 1rem;
-    height: 22em;
+    height: 20em;
     width: auto;
     object-fit: cover;
 }
